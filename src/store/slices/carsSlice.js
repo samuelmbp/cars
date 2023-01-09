@@ -4,7 +4,7 @@ const carsSlice = createSlice({
 	name: 'cars',
 	initialState: {
 		searchTerm: '',
-		cars: [],
+		data: [],
 	},
 
 	reducers: {
@@ -15,7 +15,7 @@ const carsSlice = createSlice({
 		// NOTE: Assumptions:
 		// action.payload === { name: 'abc', cost: 1200 }
 		addCar(state, action) {
-			state.cars.push({
+			state.data.push({
 				name: action.payload.name,
 				cost: action.payload.cost,
 				id: nanoid(), // Generate a random id
@@ -25,11 +25,11 @@ const carsSlice = createSlice({
 		removeCar(state, action) {
 			// Assumptions:
 			// action.payload === the id of the car I want to remove
-			const updated = state.cars.filter((car) => {
+			const updated = state.data.filter((car) => {
 				return car.id !== action.payload;
 			});
 
-			state.cars = updated;
+			state.data = updated;
 		},
 	},
 });
