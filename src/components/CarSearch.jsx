@@ -8,8 +8,6 @@ const CarSearch = () => {
 		return state.cars;
 	});
 
-	console.log(searchTerm);
-
 	const handleSearchTermChange = (event) => {
 		dispatch(changeSearchTerm(event.target.value));
 	};
