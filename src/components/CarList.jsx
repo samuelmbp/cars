@@ -20,7 +20,6 @@ const CarList = () => {
 	};
 
 	const renderedCars = cars.map((car) => {
-		// TODO: Decide if the car should be bold
 		const bold = name && car.name.toLowerCase().includes(name.toLowerCase());
 
 		return (
